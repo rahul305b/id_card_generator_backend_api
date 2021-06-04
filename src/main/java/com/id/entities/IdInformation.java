@@ -39,6 +39,7 @@ public class IdInformation extends AbstractBaseEntity{
         modelMapper.map(idInfoModel,idInformation);
         return  idInformation;
     }
+
     public IdInfoDTO to(){
 IdInfoDTO idInfoDTO=new IdInfoDTO();
 ModelMapper modelMapper=new ModelMapper();
