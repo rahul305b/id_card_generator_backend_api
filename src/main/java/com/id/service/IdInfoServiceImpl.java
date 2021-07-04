@@ -32,4 +32,17 @@ public class IdInfoServiceImpl implements  IdInfoService{
     public IdInformation fetchByID(Long id){
         return this.idRepository.findById(id).get();
     }
+
+    @Override
+    public long fetchIdCount()
+    {
+        return this.idRepository.fetchTotalID();
+    }
+
+    @Override
+    public IdInformation UpdateBranch(Long id, String branch){
+         this.idRepository.UpdateTheBranch(id,branch);
+         return this.idRepository.findById(id).get();
+    }
+
 }

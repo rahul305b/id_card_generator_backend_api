@@ -10,4 +10,8 @@ public interface IdInfoService {
     List<IdInformation> fetchAll();
 
     IdInformation fetchByID(Long id);
+
+    long fetchIdCount();
+
+    IdInformation UpdateBranch(Long id,String branch);
 }

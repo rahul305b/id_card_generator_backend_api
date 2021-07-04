@@ -70,5 +70,21 @@ public class IdCardController {
         return response;
 
     }
+    //Get the Count by using queries in repository
+    @GetMapping("/idCount")
+    public long fetchIdCountUsingQuery(){
+        return this.idInfoService.fetchIdCount();
+    }
+
+    //Update the branch using queries in repository with help of id
+
+    @PutMapping("/idBranch/{id}")
+    public IdInfoDTO UpdateBranch(@PathVariable Long id,@RequestPart(name="idCardModel",required = false) IdInfoModel idInfoModel){
+        String branch=idInfoModel.getBranch();
+        return this.idInfoService.UpdateBranch(id,branch).to();
+    }
+
+
+
 
 }
